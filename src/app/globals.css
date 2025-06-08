@@ -3,6 +3,28 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Mind Map Theme Variables */
+  --mm-primary: #71895b; /* avocado green */
+  --mm-secondary: #c65a2e; /* burnt orange */
+  --mm-accent: #d2a447; /* mustard */
+  --mm-teal: #4f826d; /* teal */
+  --mm-cream: #e7dcc0; /* cream */
+  --mm-bg: #f3eddc; /* warm off-white background */
+  --mm-coffee: #4a3d34; /* coffee-brown edges */
+
+  /* UI Colors */
+  --mm-sidebar-bg: var(--mm-bg);
+  --mm-toolbar-bg: var(--mm-cream);
+  --mm-border: var(--mm-cream);
+  --mm-text: var(--mm-coffee);
+  --mm-text-muted: rgba(74, 61, 52, 0.7);
+
+  /* Interactive States */
+  --mm-hover: #f0e5d0;
+  --mm-focus: var(--mm-coffee);
+  --mm-shadow: rgba(74, 61, 52, 0.1);
+  --mm-shadow-hover: rgba(74, 61, 52, 0.2);
 }
 
 @theme inline {
@@ -23,4 +45,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* React Flow custom styles */
+.react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+.react-flow__edge.animated path {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }

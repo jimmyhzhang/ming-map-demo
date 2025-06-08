@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Mind Map - Beautiful Interactive Mind Maps
 
-## Getting Started
+A modern, interactive mind mapping application built with Next.js, React Flow, and Sentry for error tracking.
 
-First, run the development server:
+## ✨ Features
+
+- **Beautiful Interactive Mind Maps**: Create stunning mind maps with drag-and-drop functionality
+- **Three Node Types**: Topic (purple), Subtopic (blue), and Note (green) nodes with gradient designs
+- **Real-time Editing**: Double-click any node to edit text inline
+- **Smooth Connections**: Connect nodes with animated edges
+- **Error Tracking**: Integrated Sentry.io for comprehensive crash tracking
+- **Modern UI**: Clean, responsive design with Tailwind CSS
+- **TypeScript**: Full type safety throughout the application
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+Create a `.env.local` file and add your Sentry DSN:
+
+```env
+NEXT_PUBLIC_SENTRY_DSN=https://your-dsn@sentry.io/project-id
+SENTRY_ORG=your-org
+SENTRY_PROJECT=mindmap-app
+NODE_ENV=development
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Add Nodes**: Drag node types from the left sidebar to the canvas
+2. **Edit Text**: Double-click any node to edit its text
+3. **Connect Nodes**: Drag from the small circles (handles) on nodes to create connections
+4. **Navigate**: Use mouse wheel to zoom, drag canvas to pan
+5. **Controls**: Use Reset/Clear buttons in the top-right panel
 
-## Learn More
+## 🏗️ Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with Sentry
+│   ├── page.tsx            # Main page with error boundary
+│   └── globals.css         # Global styles
+├── components/
+│   ├── MindMap.tsx         # Main mind map component
+│   ├── Sidebar.tsx         # Node palette sidebar
+│   ├── ErrorBoundary.tsx   # Error handling component
+│   └── CustomNodes/        # Custom node components
+├── hooks/
+│   └── useMindMapState.ts  # State management hook
+└── lib/
+    └── sentry.ts           # Sentry configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Built With
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js 15** - React framework with App Router
+- **React Flow** - Interactive node-based UI library
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type safety and better DX
+- **Sentry** - Error tracking and performance monitoring
 
-## Deploy on Vercel
+## 🔧 Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Error Tracking
+
+This application includes comprehensive error tracking with Sentry:
+
+- Automatic error capture and reporting
+- Custom error boundary with graceful fallbacks
+- Development-friendly error display
+- Context-rich error reports
+
+## 🚀 Deployment
+
+The application is ready for deployment on platforms like Vercel, Netlify, or any Node.js hosting service.
+
+For Vercel deployment:
+1. Connect your repository to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
